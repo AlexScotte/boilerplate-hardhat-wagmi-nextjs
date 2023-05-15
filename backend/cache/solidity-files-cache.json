@@ -1,0 +1,75 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\Alex\\Documents\\Travail\\boilerplate-hardhat-wagmi-nextjs\\backend\\contracts\\SimpleStorage.sol": {
+      "lastModificationDate": 1682573136468,
+      "contentHash": "49b7c6ca462f2848b16f64ab7e53d422",
+      "sourceName": "contracts/SimpleStorage.sol",
+      "solcConfig": {
+        "version": "0.8.18",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.18"
+      ],
+      "artifacts": [
+        "SimpleStorage"
+      ]
+    },
+    "C:\\Users\\Alex\\Documents\\Travail\\boilerplate-hardhat-wagmi-nextjs\\backend\\contracts\\SimpleStorage2.sol": {
+      "lastModificationDate": 1682578231819,
+      "contentHash": "7a868714b1e0faa9a73757d4dbe64fcf",
+      "sourceName": "contracts/SimpleStorage2.sol",
+      "solcConfig": {
+        "version": "0.8.18",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.18"
+      ],
+      "artifacts": [
+        "SimpleStorage2"
+      ]
+    }
+  }
+}
