@@ -1,5 +1,23 @@
-import Link from "next/link";
-import Home from "./page";
+"use client";
+
+import Header from "./components/Header";
+import { WagmiConfig, createConfig, configureChains } from "wagmi";
+import { hardhat } from "wagmi/chains";
+import { publicProvider } from "wagmi/providers/public";
+import { MetaMaskConnector } from "wagmi/connectors/metaMask";
+import { EthProvider } from "./contexts/eth_context";
+
+const { chains, publicClient, webSocketPublicClient } = configureChains(
+  [hardhat],
+  [publicProvider()]
+);
+
+const config = createConfig({
+  autoConnect: false,
+  connectors: [new MetaMaskConnector({ chains })],
+  publicClient,
+  webSocketPublicClient,
+});
 
 export const metadata = {
   title: "Next.js",
@@ -10,11 +28,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <>
-          <Link href="/Get">Get</Link>
-          <Link href="/set">Set</Link>
-        </>
-        <div>{children}</div>
+        <WagmiConfig config={config}>
+          <EthProvider>
+            <Header />
+
+            <div>{children}</div>
+          </EthProvider>
+        </WagmiConfig>
       </body>
     </html>
   );
