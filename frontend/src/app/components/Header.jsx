@@ -28,7 +28,7 @@ export default function Header({}) {
 
   return (
     <Box sx={{ flexGrow: 1 }} height="100">
-      <AppBar position="static" sx={{ bgcolor: "black" }} height="500">
+      <AppBar position="static" height="500">
         <Toolbar
           sx={{
             display: "flex",
@@ -55,7 +55,6 @@ export default function Header({}) {
                   color="black"
                 /> */}
               </Box>
-              <label className="item-menu-beta">Beta</label>
             </Stack>
 
             <Stack
@@ -67,32 +66,29 @@ export default function Header({}) {
               marginLeft="100px"
             >
               <Link href="/Get">
-                <Typography className="item-menu">Get</Typography>
+                <Typography sx={{ fontSize: "14px" }}>Get</Typography>
               </Link>
-              <Link className="item-menu" href="/set">
-                Set
-              </Link>
+              <Link href="/Set">Set</Link>
             </Stack>
 
             <Stack
+              direction="row"
               alignItems="center"
               justifyContent="flex-end"
               onClick={handleWalletClick}
               sx={{ cursor: "pointer" }}
             >
-              <Typography className="header-text-wallet">
+              <Typography
+                width="100px"
+                justifyContent="flex-end"
+                textAlign="end"
+                marginRight="10px"
+                sx={{ fontSize: "14px" }}
+              >
                 {connectedWallet}
               </Typography>
 
-              <div
-                className="decoration-circle"
-                style={{ height: "40px", width: "40px" }}
-              >
-                <div className="decoration-circle">
-                  <AccountBalanceWallet className="icon" />
-                </div>
-              </div>
-              <span className="decoration" />
+              <AccountBalanceWallet className="icon" />
             </Stack>
           </Stack>
         </Toolbar>

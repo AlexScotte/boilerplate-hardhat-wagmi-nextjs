@@ -1,11 +1,12 @@
 "use client";
 
 import Header from "./components/Header";
-import { WagmiConfig, createConfig, configureChains } from "wagmi";
+import { WagmiConfig, createConfig, configureChains, useAccount } from "wagmi";
 import { hardhat } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { EthProvider } from "./contexts/eth_context";
+import NotConnected from "./components/NotConnected";
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [hardhat],
@@ -25,6 +26,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const { isConnected, address } = useAccount();
+
   return (
     <html lang="en">
       <body>
@@ -32,7 +35,15 @@ export default function RootLayout({ children }) {
           <EthProvider>
             <Header />
 
-            <div>{children}</div>
+            {isConnected ? (
+              <>
+                <div>{children}</div>
+              </>
+            ) : (
+              <>
+                <NotConnected />
+              </>
+            )}
           </EthProvider>
         </WagmiConfig>
       </body>
