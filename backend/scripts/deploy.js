@@ -43,7 +43,7 @@ async function saveFrontendFiles(contractName, contract) {
   const contractsDir = path.join(
     __dirname,
     "../..",
-    "frontend2",
+    "frontend",
     "src",
     "contracts"
   );
